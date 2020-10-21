@@ -131,4 +131,7 @@ cartesian([1,2,3], ["a","b"])
 
 def add(a, b):
     return a+b
- 
+
+
+def foo():
+    return 'hello world' 

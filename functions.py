@@ -127,4 +127,8 @@ def cartesian(a, b):
                                          # --> we need to convert 'a' into string
                     
         #there is no return in the function, I could not return anything as 'k' is not an argument of the function
-cartesian([1,2,3], ["a","b"]) 
+cartesian([1,2,3], ["a","b"])
+
+def add(a, b):
+    return a+b
+ 

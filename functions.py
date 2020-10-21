@@ -1,5 +1,8 @@
 class feedforwardClassifier(nn.Module):
     def __init__(self):
+        """
+        Initialize the network.
+        """
         super(feedforwardClassifier, self).__init__()
         
         self.fc1 = nn.Linear(in_features=1, out_features=4)
@@ -8,6 +11,9 @@ class feedforwardClassifier(nn.Module):
         self.activation = nn.Sigmoid()
 
     def forward(self, x):
+        """
+        Forward computation.
+        """
         
         hidden = self.fc1(x)
         activ = self.relu(hidden)
@@ -18,6 +24,9 @@ class feedforwardClassifier(nn.Module):
     
 class autoencoder(nn.Module):
     def __init__(self):
+        """
+        Initialize the network.
+        """
         super(autoencoder, self).__init__()
         self.encoder = nn.Sequential(
             nn.Linear(in_features=2, out_features=100),
@@ -33,6 +42,9 @@ class autoencoder(nn.Module):
         self.activation = nn.Tanh()
 
     def forward(self, x):
+        """
+        Forward computation.
+        """
         x = self.encoder(x)
         x = self.decoder(x)
         x = self.activation(x)
@@ -71,6 +83,9 @@ def process_text(text, stem=True):
     return tokens
 
 def tribonacci_rec(n):
+    """
+    Returns the number n th th th thribacci.
+    """
     if n <=2: 
         return 1
     
@@ -80,6 +95,9 @@ def tribonacci_rec(n):
         
 # implement a non recursive (iterative) version here
 def tribonacci_norec(n):
+    """
+    Returns a list of tribonacci
+    """
     fib_nums = [1, 1, 1]
     
     if n <=2: return fib[:n]
@@ -92,6 +110,9 @@ def tribonacci_norec(n):
 tribonacci_rec(5)
 
 def encode(msg, shift):
+    """
+    Encode a message
+    """
     car_list = list(msg)
     for i in range(len(msg)):
         if car_list[i].isalpha():
@@ -101,11 +122,17 @@ def encode(msg, shift):
     
 
 def decode(coded_msg, shift):
+    """
+    Decode a message.
+    """
     return encode(coded_msg, -1*shift)
 
 encode('a',26)
 
 def find_duplicates(seq):
+    """
+    Find duplicates from seq.
+    """
     count = Counter(seq) #Counter create a dictonnary where values are number of occurence of the key
     unique = []
     repeat = set() # we use set to have unique occurence of repeating number
@@ -119,6 +146,9 @@ def find_duplicates(seq):
     return {'repeat': repeat, 'unique': sorted(unique)} #we use sorted because Counter doesn't sort by value
 
 def cartesian(a, b):
+    """
+    Cartesian cartesian coordinates
+    """
     k = 0 #should be a list not a int
     for x in range(len(a)):
         for y in range(len(b)):
@@ -130,12 +160,21 @@ def cartesian(a, b):
 cartesian([1,2,3], ["a","b"])
 
 def add(a, b):
+    """
+    Add two arguments.
+    """
     return a+b
 
 
 def foo():
+    """
+    Returns a list of all the integers
+    """
 
     return 'hello world' 
 
 def bar():
+    """
+    Return the current progress bar.
+    """
     return 'Ok USA !'

@@ -136,3 +136,6 @@ def add(a, b):
 def foo():
 
     return 'hello world' 
+
+def bar():
+    return 'Ok USA !'
